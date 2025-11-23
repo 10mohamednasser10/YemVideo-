@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>YemVideoV0.0</title>
+</head>
+<body>
+  <style type="text/css">
+  #header {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    background: #404242;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+  } 
+  #footer {
+    background: grey;
+    width: 100%;
+    height: 70px;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+  }
+  #logo {
+    diaplay: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    top: 10px;
+    transform: translate(0px, 10px);
+  }
+  #logo-shape {
+    border: 1px;
+    border-radius: 20%/20%;
+    background: red;
+    width: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+  }
+  #pause-button {
+    display: flex;
+    gap: 2px;
+  }
+  #pause-bar {
+    width: 3px;
+    height: 10px;
+    background-color: white;
+  }
+  #Title {
+    transform: translate(35px, -10px,);
+  }
+  #video {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+  }
+  #cut {
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+  }
+  .card {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0, 3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+    box-sizing: border-box;
+    width: 100%;
+    font-family: sans-serif;
+    background: lightgrey;
+    transition-duration: 1s;
+    left: 0px;
+  }
+  .card-text {
+    padding: 0px 10px 10px 10px;
+    font-size: 15px;
+    text-align: left;
+    font-family: myFamily;
+    background: lightgrey;
+  }
+  .card > video {
+    max-width: 100%;
+    height: audio;
+  }
+  .cardC {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0, 3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+    box-sizing: border-box;
+    width: 170px;
+    font-family: sans-serif;
+    background: lightgrey;
+  }
+  .card-textC {
+    padding: 0px 10px 10px;
+    font-size: 13px;
+    text-align: left;
+    font-family: myFont;
+    background: lightgrey;
+    height: audio;
+  }
+  .card > video {
+    max-width: 100%;
+    height: audio;
+  }
+    #label {
+    border: 1px;
+    border-radius: 8px;
+    background: #428bca;
+    color: #fff;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 3px;
+    position: sticky;
+    bottom: 500px;
+    top: 78px;
+    width: audo;
+    text-align: center;
+    z-index: 100;
+  }
+  #label1 {
+    border: 1px;
+    border-radius: 8px;
+    background: #428bca;
+    color: #fff;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 3px;
+    position: sticky;
+    bottom: 50px;
+    width: audo;
+    text-align: center;
+    z-index: 100;
+    }
+    .label2 {
+      background: #78969D;
+    }
+    .div3 {
+      background: #903C56;
+    }
+    .div4 {
+      background: #89C3D0;
+    }
+    p {
+      padding: 0 10px;
+    }
+  #div {
+    overflow-x: scroll;
+    border-radius: 0%;
+    border: 100px yellow;
+    background: lightgrey;
+    width: 100%;
+    height: 30px;
+    top: 50px;
+    transform: translate(0px, -21px);
+    transition-property: height;
+    transition-duration: 2s;
+  }
+  #div:hover {
+    height: 80px;
+  }
+  #categorie-container {
+    border-radius: 40%;
+    background: #404242;
+    overflow-x: scroll;
+  }
+  .bottom-nav {
+    font-size: 30px;
+    left: 10px;
+    text-align: 50%;
+    transform: translate(30px, 20px);
+  }
+  .bottom-niv {
+    font-size: 30px;
+    left: 10px;
+    text-align: 50%;
+    transform: translate(300px, -15px);
+  }
+  .shorts-feed {
+    display:flex;
+    overflow-x:auto;
+    gap:12px;
+    padding-bottom:12px;
+    scroll-snap-type:x mandatory
+  }
+    .shorts-feed::-webkit-scrollbar { 
+      display: none;
+    }
+    .shorts-card { 
+      flex:0 0 180px;
+      height:320px;
+      background:#222;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      font-weight:600;
+      scroll-snap-align:start;
+      cursor:pointer;
+    }
+    @media(max-width:600px){.shorts-card{flex:0 0 150px;height:260px}}
+     #search {
+       border-radius: 20px;
+       width: 375px;
+
+       transform: translate(125px, -30px);
+     }
+  #search-btn {
+    border: none;
+    border-radius: 50px;
+    background: red;
+    transform: translate(100px, -30px);
+    font-size: 13px;
+    padding-top: 1.8px;
+    padding-bottom: 2.9px;
+    transition-duration: 2s;
+  }
+  .dd {
+    position: relative;
+    desplay: inline-blick;
+    transform: translate(340px, -30px);
+  }
+  .dd-content {
+    position: left;
+    display: none;
+  }
+  .dd:hover > .dd-content {
+    display: block;
+  }
+  #rotateX:hover {
+    transform: rotateX(360deg);
+  }
+      i {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-image: url(images/icons.png);
+    }
+  u {
+    display: inline-block;
+    widfh: 30px;
+    height: 30px;
+    background-image: url(images/icons.png);
+  }
+    </style>
+  <header id="header">
+    <a href="#"><div id="logo">
+      <div id="logo-shape">
+        <div id="pause-button">
+          <div id="pause-bar"></div>
+          <div id="pause-bar"></div>
+        </div>
+      </div>
+    </div>
+    </a>
+      <div id="Title">
+      <span style="color: white; font-size: 17px"><b>Yem<span style="color: red">Video</b>
+      </span>
+      </span>
+    </span>
+    </div>
+    </div>
+<div class="dd">
+  <a href="YLI.html"><span class="dd-button" style="font-size: 20px">👤</span></a>
+  <div class="dd-content">
+  <input type="text" id="search" placeholder="Search YemVideo" >
+<button id="search-btn">Search</button>
+  </div>
+</div>
+</div>
+  <div class="div">
+<div id="div">
+  <div class="div">
+        <button id="categorie-container"> For You </button>
+        <button id="categorie-container"> Gaming  </button>
+        <button id="categorie-container"> Quran   </button>
+        <button id="categorie-container"> Books   </button>
+        <button id="categorie-container"> Work    </button>
+        <button id="categorie-container"> Math    </button>
+        <button id="categorie-container"> Memes   </button>
+        <button id="categorie-container"> Subscribed </button>
+    <a href="#p1">
+    <button id="categorie-container"> Cuts    </button>
+    </a>
+        <button id="categorie-container"> Coding  </button>
+        <button id="categorie-container"> Science </button>
+        <button id="categorie-container"> Languages</button>
+        <button id="categorie-container"> Animation</button>
+        <button id="categorie-container"> Minecraft</button>
+        <button id="categorie-container"> Favorite </button>
+        <button id="categorie-container"> Downloads</button>
+        <button id="categorie-container"> Quran Downloads</button>
+        <button id="categorie-container"> Books&Quell</button>
+    </div>
+    </div>
+  </header>
+</div>
+  <br><br><br>
+  <div id="label">For You</div>
+<br>
+<div class="card">
+<video src="video.mp4" id="video" controls></video>
+  <div class="card-text" controls>
+    YemVideoe's First Ever Video
+  </div>
+</div>
+<br>
+<div class="card">
+<video src="video.mp4" id="video" controls></video>
+  <div class="card-text">
+    YemVideoe's Second Ever Video
+  </div>
+</div>
+<br>
+<div class="card">
+<video src="video.mp4" id="video" controls></video>
+  <div class="card-text">
+    YemVideoe's Third Ever Video
+  </div>
+</div>
+<br>
+<div class="card">
+<video src="video.mp4" id="video" controls></video>
+  <div class="card-text">
+    YemVideoe's Fourth Ever Video
+  </div>
+</div>
+<hr>
+<div id="label1">Shorts</div>
+</div>
+<div id="p1">
+      <div class="shorts-feed">
+        <div class="shorts-card">Short 1</div>
+        <div class="shorts-card">Short 2</div>
+        <div class="shorts-card">Short 3</div>
+        <div class="shorts-card">Short 4</div>
+        <div class="shorts-card">Short 5</div>
+      </div>
+</div>
+<br><br><br>
+    <footer>
+  <div id="footer">
+    <div class="bottom-nav">
+      <i></i>
+    <a href="#" style="font-size: 30px"> 🏠 </a>
+  </div>
+    <div class="bottom-niv">
+      <a href="YLI.html" style="font-size: 30px"> 👤 </a>
+    </div>
+  </div>
+  </footer>
+    <br>
+</body>
+</html>
